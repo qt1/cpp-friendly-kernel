@@ -1,0 +1,22 @@
+obj-m += hello-1.o
+
+#orig_cc = $(CC)
+#CC = g++  -no-integrated-cpp -fpermissive
+
+build = /home/baruch/w/my_env
+
+#%.o : %.cpp %.hpp
+#   $(CC) $(CPPFLAGS) $(CXXFLAGS)  -c 
+   
+#hello-1.mod.o : hello-1.mod.c
+#	CC = $(orig_cc)
+#	make -C $(build) M=$(PWD) modules
+
+all:
+	make -C $(build) M=$(PWD) modules
+
+
+
+clean:
+	make -C /home/baruch/w/my_env M=$(PWD) clean
+#	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
